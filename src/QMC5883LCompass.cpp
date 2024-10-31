@@ -109,7 +109,8 @@ void QMC5883LCompass::_writeReg(byte r, byte v){
 	@since v0.1;
 **/
 // Set chip mode
-void QMC5883LCompass::setMode(byte mode, byte odr, byte rng, byte osr){
+// To write a broader and more portable code, using uint8_t may be better.
+void QMC5883LCompass::setConfig(uint8_t mode, uint8_t odr, uint8_t rng, uint8_t osr){
 	_writeReg(0x09,mode|odr|rng|osr);
 }
 
